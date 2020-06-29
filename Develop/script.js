@@ -1,13 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-
+var choice= Math.floor(Math.random()*4)
+var password = genPassword[choice]
 //Mywork
 function genPassword(){
 
-var userInput = prompt('How long would you like your password to be?');
-if (userInput > 8 && userInput < 128 ){
-  alert(`Your password will include ${userInput} characters`);
+var plength = prompt('How long would you like your password to be?');
+if (plength > 8 && plength < 128 ){
+  alert(`Your password will include ${plength} characters`);
 }
 else {
   alert('Your password is too short. Please choose a number between 8 and 128');
@@ -37,39 +37,12 @@ else {
 var confirmSpecial = confirm("Would you like to include special characters?");
 if (confirmSpecial){
   alert("Special characters will be included in your password.");
+  confirmSpecial = []
 }
 else {
   alert("Special Characters will not be included in your password.");
 }
-//Only runs if the user chooses valid input
-// if (userInput > 8 || userInput < 128){
-//   alert("Input recieved!");
-// } else if (userInput < 8 || userInput > 128) {
-//   alert("Invalid input");
-// }
 }
-
-// var info = [
-//   {q1: "Would you like to include lower case letters?" , a: "t"},
-//   {q2: "Would you like to include upper case letters?" , a: "t"},
-//   {q3: "Would you like to include numeric values?" , a: "t"},
-//   {q4: "Would you like to include special characters?" , a: "t"},
-// ];
-
-// for( var i = 0; i <info.length; i++) {
-//   var answer = confirm(info[i].q);
-
-//   if ((answer === true && info[i].a === "t") ||
-//   (answer === false && info[i].a === "f")) {
-//     alert("I will include this!");
-//   }
-//   else {
-//     alert("I will not include this!");
-//   }
-// }
-
-
-
 generateBtn.addEventListener("click", genPassword);
 
 
@@ -79,10 +52,11 @@ generateBtn.addEventListener("click", genPassword);
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword("#questions");
+  var password = generatePassword("#genPassword");
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+  password = (`Your password is ${plength}${confirmLower}${confirmUpper}${confirmNumeric}${confirmSpecial}`)
 
 }
 
