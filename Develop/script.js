@@ -9,23 +9,29 @@ var spChar
 
 //Mywork
 function genPassword(){
-var length = prompt('How long would you like your password to be?');
+var userInput = prompt('How long would you like your password to be?');
+userInput = 
+console.log(userInput);
 
-// for ( var answer = < 8;){
+//Only runs if the user chooses valid input
+if (userInput >= 8 || userInput <= 128){
+  alert("Input recieved!");
+} else if (userInput < 8 || userInput > 128) {
+  alert("Invalid input");
+}
 
-//   alert("invalid input");
-var questions = [
+var info = [
   {q: "Would you like to include lower case letters?" , a: "t"},
   {q: "Would you like to include upper case letters?" , a: "t"},
   {q: "Would you like to include numeric values?" , a: "t"},
   {q: "Would you like to include special characters?" , a: "t"},
 ];
 
-for( var i = 0; i <questions.length; i++) {
-  var answer = confirm(questions[i].q);
+for( var i = 0; i <info.length; i++) {
+  var answer = confirm(info[i].q);
 
-  if ((answer === true && questions[i].a === "t") ||
-  (answer === false && questions[i].a === "f")) {
+  if ((answer === true && info[i].a === "t") ||
+  (answer === false && info[i].a === "f")) {
     alert("I will include this!");
   }
   else {
@@ -54,23 +60,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// var amountChars = prompt('');
-// var settings2 = prompt('');
-// var settings3 = prompt('');
-
-// if amountChars(){
-
-// }
-
-// if settings2(){
-
-// }
-
-// if settings3(){
-
-// }
-
-// result = allthingsthathappened 
-// return result;
 
