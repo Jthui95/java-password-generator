@@ -11,7 +11,7 @@ The puprose of this project was to create a javascript based application that wo
  
 ### H3 Demo Photo
 
-
+![alt text](https://github.com/Jthui95/javascript-password-generator/blob/master/Assets/Demo.png "Demo Photo")
 
 #### H4 How To Use
 
